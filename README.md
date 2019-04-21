@@ -1,7 +1,7 @@
 # YB-Portfolio
-IBM Data Science Professional Certification Progrm through Coursera.
+IBM Data Science Professional Certification Program through Coursera.
 
-These files show what new skills I learned throughout this program.
+The files in this portfolio show what new skills I learned throughout this program.
 
 In this Professional Certificate learners developed and honed
 hands-on skills in Data Science and Machine Learning. Learners
