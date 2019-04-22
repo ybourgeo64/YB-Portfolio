@@ -1,0 +1,490 @@
+
+Assignment: Notebook for Peer Assignment
+
+[[introduction]]
+= Introduction
+
+Using this Python notebook you will: 1. Understand 3 Chicago datasets +
+1. Load the 3 datasets into 3 tables in a Db2 database 1. Execute SQL
+queries to answer assignment questions
+
+[[understand-the-datasets]]
+== Understand the datasets
+
+To complete the assignment problems in this notebook you will be using
+three datasets that are available on the city of Chicago's Data Portal:
+1. Socioeconomic Indicators in Chicago 1. Chicago Public Schools 1.
+Chicago Crime Data
+
+[[socioeconomic-indicators-in-chicago]]
+=== 1. Socioeconomic Indicators in Chicago
+
+This dataset contains a selection of six socioeconomic indicators of
+public health significance and a “hardship index,” for each Chicago
+community area, for the years 2008 – 2012.
+
+For this assignment you will use a snapshot of this dataset which can be
+downloaded from:
+https://ibm.box.com/shared/static/05c3415cbfbtfnr2fx4atenb2sd361ze.csv
+
+A detailed description of this dataset and the original dataset can be
+obtained from the Chicago Data Portal at:
+https://data.cityofchicago.org/Health-Human-Services/Census-Data-Selected-socioeconomic-indicators-in-C/kn9c-c2s2
+
+[[chicago-public-schools]]
+=== 2. Chicago Public Schools
+
+This dataset shows all school level performance data used to create CPS
+School Report Cards for the 2011-2012 school year. This dataset is
+provided by the city of Chicago's Data Portal.
+
+For this assignment you will use a snapshot of this dataset which can be
+downloaded from:
+https://ibm.box.com/shared/static/f9gjvj1gjmxxzycdhplzt01qtz0s7ew7.csv
+
+A detailed description of this dataset and the original dataset can be
+obtained from the Chicago Data Portal at:
+https://data.cityofchicago.org/Education/Chicago-Public-Schools-Progress-Report-Cards-2011-/9xs2-f89t
+
+[[chicago-crime-data]]
+=== 3. Chicago Crime Data
+
+This dataset reflects reported incidents of crime (with the exception of
+murders where data exists for each victim) that occurred in the City of
+Chicago from 2001 to present, minus the most recent seven days.
+
+This dataset is quite large - over 1.5GB in size with over 6.5 million
+rows. For the purposes of this assignment we will use a much smaller
+sample of this dataset which can be downloaded from:
+https://ibm.box.com/shared/static/svflyugsr9zbqy5bmowgswqemfpm1x7f.csv
+
+A detailed description of this dataset and the original dataset can be
+obtained from the Chicago Data Portal at:
+https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2
+
+[[download-the-datasets]]
+=== Download the datasets
+
+In many cases the dataset to be analyzed is available as a .CSV (comma
+separated values) file, perhaps on the internet. Click on the links
+below to download and save the datasets (.CSV files): 1. *CENSUS_DATA:*
+https://ibm.box.com/shared/static/05c3415cbfbtfnr2fx4atenb2sd361ze.csv
+1. *CHICAGO_PUBLIC_SCHOOLS*
+https://ibm.box.com/shared/static/f9gjvj1gjmxxzycdhplzt01qtz0s7ew7.csv
+1. *CHICAGO_CRIME_DATA:*
+https://ibm.box.com/shared/static/svflyugsr9zbqy5bmowgswqemfpm1x7f.csv
+
+*NOTE:* Ensure you have downloaded the datasets using the links above
+instead of directly from the Chicago Data Portal. The versions linked
+here are subsets of the original datasets and have some of the column
+names modified to be more database friendly which will make it easier to
+complete this assignment.
+
+[[store-the-datasets-in-database-tables]]
+=== Store the datasets in database tables
+
+To analyze the data using SQL, it first needs to be stored in the
+database.
+
+While it is easier to read the dataset into a Pandas dataframe and then
+PERSIST it into the database as we saw in Week 3 Lab 3, it results in
+mapping to default datatypes which may not be optimal for SQL querying.
+For example a long textual field may map to a CLOB instead of a VARCHAR.
+
+Therefore, *it is highly recommended to manually load the table using
+the database console LOAD tool, as indicated in Week 2 Lab 1 Part II*.
+The only difference with that lab is that in Step 5 of the instructions
+you will need to click on create "(+) New Table" and specify the name of
+the table you want to create and then click "Next".
+
+[[now-open-the-db2-console-open-the-load-tool-select-drag-the-.csv-file-for-the-first-dataset-next-create-a-new-table-and-then-follow-the-steps-on-screen-instructions-to-load-the-data.-name-the-new-tables-as-folows]]
+===== Now open the Db2 console, open the LOAD tool, Select / Drag the
+.CSV file for the first dataset, Next create a New Table, and then
+follow the steps on-screen instructions to load the data. Name the new
+tables as folows:
+
+1.  *CENSUS_DATA*
+2.  *CHICAGO_PUBLIC_SCHOOLS*
+3.  *CHICAGO_CRIME_DATA*
+
+[[connect-to-the-database]]
+=== Connect to the database
+
+Let us first load the SQL extension and establish a connection with the
+database
+
+
++*In[1]:*+
+[source, ipython3]
+----
+%load_ext sql
+----
+
+In the next cell enter your db2 connection string. Recall you created
+Service Credentials for your Db2 instance in first lab in Week 3. From
+the *uri* field of your Db2 service credentials copy everything after
+db2:// (except the double quote at the end) and paste it in the cell
+below after ibm_db_sa://
+
+
++*In[2]:*+
+[source, ipython3]
+----
+# Remember the connection string is of the format:
+# %sql ibm_db_sa://my-username:my-password@my-hostname:my-port/my-db-name
+# Enter the connection string for your Db2 on Cloud database instance below
+%sql ibm_db_sa://lln32654:69d16lp9%5Ecw5lj4g@dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50000/BLUDB
+----
+
+
++*Out[2]:*+
+----'Connected: lln32654@BLUDB'----
+
+[[problems]]
+== Problems
+
+Now write and execute SQL queries to solve assignment problems
+
+[[problem-1]]
+=== Problem 1
+
+[[find-the-total-number-of-crimes-recorded-in-the-crime-table]]
+===== Find the total number of crimes recorded in the CRIME table
+
+
++*In[40]:*+
+[source, ipython3]
+----
+# Rows in Crime table
+%sql select count(*) AS "Number_of_Crimes" from chicago_crime_data
+----
+
+
++*Out[40]:*+
+----
+ * ibm_db_sa://lln32654:***@dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50000/BLUDB
+Done.
+
+[cols="",options="header",]
+|================
+|Number_of_Crimes
+|533
+|================
+----
+
+[[problem-2]]
+=== Problem 2
+
+[[retrieve-first-10-rows-from-the-crime-table]]
+===== Retrieve first 10 rows from the CRIME table
+
+
++*In[4]:*+
+[source, ipython3]
+----
+%sql select * from chicago_crime_data \
+fetch first 10 rows only
+----
+
+
++*Out[4]:*+
+----
+ * ibm_db_sa://lln32654:***@dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50000/BLUDB
+Done.
+
+[cols=",,,,,,,,,,,,,,,,,,,,,",options="header",]
+|=======================================================================
+|id |case_number |DATE |block |iucr |primary_type |description
+|location_description |arrest |domestic |beat |district |ward
+|community_area_number |fbicode |x_coordinate |y_coordinate |YEAR
+|updatedon |latitude |longitude |location
+|3512276 |HK587712 |08/28/2004 05:50:56 PM |047XX S KEDZIE AVE |890
+|THEFT |FROM BUILDING |SMALL RETAIL STORE |FALSE |FALSE |911 |9 |14 |58
+|6 |1155838 |1873050 |2004 |02/10/2018 03:50:01 PM |41.80744050
+|-87.70395585 |(41.8074405, -87.703955849)
+
+|3406613 |HK456306 |06/26/2004 12:40:00 PM |009XX N CENTRAL PARK AVE
+|820 |THEFT |$500 AND UNDER |OTHER |FALSE |FALSE |1112 |11 |27 |23 |6
+|1152206 |1906127 |2004 |02/28/2018 03:56:25 PM |41.89827996
+|-87.71640551 |(41.898279962, -87.716405505)
+
+|8002131 |HT233595 |04/04/2011 05:45:00 AM |043XX S WABASH AVE |820
+|THEFT |$500 AND UNDER |NURSING HOME/RETIREMENT HOME |FALSE |FALSE |221
+|2 |3 |38 |6 |1177436 |1876313 |2011 |02/10/2018 03:50:01 PM
+|41.81593313 |-87.62464213 |(41.815933131, -87.624642127)
+
+|7903289 |HT133522 |12/30/2010 04:30:00 PM |083XX S KINGSTON AVE |840
+|THEFT |FINANCIAL ID THEFT: OVER $300 |RESIDENCE |FALSE |FALSE |423 |4
+|7 |46 |6 |1194622 |1850125 |2010 |02/10/2018 03:50:01 PM |41.74366532
+|-87.56246276 |(41.743665322, -87.562462756)
+
+|10402076 |HZ138551 |02/02/2016 07:30:00 PM |033XX W 66TH ST |820 |THEFT
+|$500 AND UNDER |ALLEY |FALSE |FALSE |831 |8 |15 |66 |6 |1155240
+|1860661 |2016 |02/10/2018 03:50:01 PM |41.77345530 |-87.70648047
+|(41.773455295, -87.706480471)
+
+|7732712 |HS540106 |09/29/2010 07:59:00 AM |006XX W CHICAGO AVE |810
+|THEFT |OVER $500 |PARKING LOT/GARAGE(NON.RESID.) |FALSE |FALSE |1323
+|12 |27 |24 |6 |1171668 |1905607 |2010 |02/10/2018 03:50:01 PM
+|41.89644677 |-87.64493868 |(41.896446772, -87.644938678)
+
+|10769475 |HZ534771 |11/30/2016 01:15:00 AM |050XX N KEDZIE AVE |810
+|THEFT |OVER $500 |STREET |FALSE |FALSE |1713 |17 |33 |14 |6 |1154133
+|1933314 |2016 |02/10/2018 03:50:01 PM |41.97284491 |-87.70860008
+|(41.972844913, -87.708600079)
+
+|4494340 |HL793243 |12/16/2005 04:45:00 PM |005XX E PERSHING RD |860
+|THEFT |RETAIL THEFT |GROCERY FOOD STORE |TRUE |FALSE |213 |2 |3 |38 |6
+|1180448 |1879234 |2005 |02/28/2018 03:56:25 PM |41.82387989
+|-87.61350386 |(41.823879885, -87.613503857)
+
+|3778925 |HL149610 |01/28/2005 05:00:00 PM |100XX S WASHTENAW AVE |810
+|THEFT |OVER $500 |STREET |FALSE |FALSE |2211 |22 |19 |72 |6 |1160129
+|1838040 |2005 |02/28/2018 03:56:25 PM |41.71128051 |-87.68917910
+|(41.711280513, -87.689179097)
+
+|3324217 |HK361551 |05/13/2004 02:15:00 PM |033XX W BELMONT AVE |820
+|THEFT |$500 AND UNDER |SMALL RETAIL STORE |FALSE |FALSE |1733 |17 |35
+|21 |6 |1153590 |1921084 |2004 |02/28/2018 03:56:25 PM |41.93929582
+|-87.71092344 |(41.939295821, -87.710923442)
+|=======================================================================
+----
+
+[[problem-3]]
+=== Problem 3
+
+[[how-many-crimes-involve-an-arrest]]
+===== How many crimes involve an arrest?
+
+
++*In[41]:*+
+[source, ipython3]
+----
+%sql select count(*) AS "Number_of_Crimes_Involving_an_Arrest" from chicago_crime_data where arrest = 'TRUE'
+----
+
+
++*Out[41]:*+
+----
+ * ibm_db_sa://lln32654:***@dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50000/BLUDB
+Done.
+
+[cols="",options="header",]
+|====================================
+|Number_of_Crimes_Involving_an_Arrest
+|163
+|====================================
+----
+
+[[problem-4]]
+=== Problem 4
+
+[[which-unique-types-of-crimes-have-been-recorded-at-gas-station-locations]]
+===== Which unique types of crimes have been recorded at GAS STATION
+locations?
+
+
++*In[6]:*+
+[source, ipython3]
+----
+%sql select distinct primary_type, location_description from chicago_crime_data where location_description = 'GAS STATION'
+----
+
+
++*Out[6]:*+
+----
+ * ibm_db_sa://lln32654:***@dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50000/BLUDB
+Done.
+
+[cols=",",options="header",]
+|==================================
+|primary_type |location_description
+|CRIMINAL TRESPASS |GAS STATION
+|NARCOTICS |GAS STATION
+|ROBBERY |GAS STATION
+|THEFT |GAS STATION
+|==================================
+----
+
+Hint: Which column lists types of crimes e.g. THEFT?
+
+[[problem-5]]
+=== Problem 5
+
+[[in-the-cenus_data-table-list-all-community-areas-whose-names-start-with-the-letter-b.]]
+===== In the CENUS_DATA table list all Community Areas whose names start
+with the letter ‘B’.
+
+
++*In[7]:*+
+[source, ipython3]
+----
+%sql select community_area_name from census_data where census_data.community_area_name LIKE 'B%'
+----
+
+
++*Out[7]:*+
+----
+ * ibm_db_sa://lln32654:***@dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50000/BLUDB
+Done.
+
+[cols="",options="header",]
+|===================
+|community_area_name
+|Belmont Cragin
+|Burnside
+|Brighton Park
+|Bridgeport
+|Beverly
+|===================
+----
+
+[[problem-6]]
+=== Problem 6
+
+[[which-schools-in-community-areas-10-to-15-are-healthy-school-certified]]
+===== Which schools in Community Areas 10 to 15 are healthy school
+certified?
+
+
++*In[33]:*+
+[source, ipython3]
+----
+%sql select name_of_school, community_area_number, healthy_school_certified from CHICAGO_PUBLIC_SCHOOLS WHERE (community_area_number between 10 and 15) AND healthy_school_certified ='Yes'
+----
+
+
++*Out[33]:*+
+----
+ * ibm_db_sa://lln32654:***@dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50000/BLUDB
+Done.
+
+[cols=",,",options="header",]
+|===============================================================
+|name_of_school |community_area_number |healthy_school_certified
+|Rufus M Hitch Elementary School |10 |Yes
+|===============================================================
+----
+
+[[problem-7]]
+=== Problem 7
+
+[[what-is-the-average-school-safety-score]]
+===== What is the average school Safety Score?
+
+
++*In[50]:*+
+[source, ipython3]
+----
+%sql select round(avg(safety_score), 2) AS "Average_Safety_Score" from CHICAGO_PUBLIC_SCHOOLS
+----
+
+
++*Out[50]:*+
+----
+ * ibm_db_sa://lln32654:***@dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50000/BLUDB
+Done.
+
+[cols="",options="header",]
+|====================
+|Average_Safety_Score
+|49.500000
+|====================
+----
+
+[[problem-8]]
+=== Problem 8
+
+[[list-the-top-5-community-areas-by-average-college-enrollment-number-of-students]]
+===== List the top 5 Community Areas by average College Enrollment
+[number of students]
+
+
++*In[87]:*+
+[source, ipython3]
+----
+%sql select COMMUNITY_AREA_NAME, round(avg(COLLEGE_ENROLLMENT),2) as Average_College_Enrollment from CHICAGO_PUBLIC_SCHOOLS\
+group by COMMUNITY_AREA_NAME \
+ORDER BY Average_College_Enrollment DESC\
+fetch first 5 rows only
+----
+
+
++*Out[87]:*+
+----
+ * ibm_db_sa://lln32654:***@dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50000/BLUDB
+Done.
+
+[cols=",",options="header",]
+|===============================================
+|community_area_name |average_college_enrollment
+|ARCHER HEIGHTS |2411.500000
+|MONTCLARE |1317.000000
+|WEST ELSDON |1233.330000
+|BRIGHTON PARK |1205.880000
+|BELMONT CRAGIN |1198.830000
+|===============================================
+----
+
+[[problem-9]]
+=== Problem 9
+
+[[use-a-sub-query-to-determine-which-community-area-has-the-least-value-for-school-safety-score]]
+===== Use a sub-query to determine which Community Area has the least
+value for school Safety Score?
+
+
++*In[92]:*+
+[source, ipython3]
+----
+%sql select COMMUNITY_AREA_NAME, SAFETY_SCORE from CHICAGO_PUBLIC_SCHOOLS WHERE\
+SAFETY_SCORE = (SELECT MIN(SAFETY_SCORE) FROM CHICAGO_PUBLIC_SCHOOLS)
+----
+
+
++*Out[92]:*+
+----
+ * ibm_db_sa://lln32654:***@dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50000/BLUDB
+Done.
+
+[cols=",",options="header",]
+|=================================
+|community_area_name |safety_score
+|WASHINGTON PARK |1
+|=================================
+----
+
+[[problem-10]]
+=== Problem 10
+
+[[without-using-an-explicit-join-operator-find-the-per-capita-income-of-the-community-area-which-has-a-school-safety-score-of-1.]]
+===== [Without using an explicit JOIN operator] Find the Per Capita
+Income of the Community Area which has a school Safety Score of 1.
+
+
++*In[196]:*+
+[source, ipython3]
+----
+#
+%sql select community_area_number,PER_CAPITA_INCOME\
+from CENSUS_DATA where community_area_number in\
+(select community_area_number from CHICAGO_PUBLIC_SCHOOLS where SAFETY_SCORE=1)
+----
+
+
++*Out[196]:*+
+----
+ * ibm_db_sa://lln32654:***@dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50000/BLUDB
+Done.
+
+[cols=",",options="header",]
+|========================================
+|community_area_number |per_capita_income
+|40 |13785
+|========================================
+----
+
+Copyright © 2018
+link:cognitiveclass.ai?utm_source=bducopyrightlink&utm_medium=dswb&utm_campaign=bdu[cognitiveclass.ai].
+This notebook and its source code are released under the terms of the
+https://bigdatauniversity.com/mit-license/[MIT License].
