@@ -1,0 +1,1222 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{mathrsfs}
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{data-wrangling}
+    
+    
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \begin{verbatim}
+<a href="https://cocl.us/corsera_da0101en_notebook_top">
+     <img src="https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DA0101EN/Images/TopAd.png" width="750" align="center">
+</a>
+\end{verbatim}
+
+    Data Analysis with Python
+
+    Data Wrangling
+
+    Welcome!
+
+By the end of this notebook, you will have learned the basics of Data
+Wrangling!
+
+    Table of content
+
+\begin{verbatim}
+<li><a href="#identify_handle_missing_values">Identify and handle missing values</a>
+    <ul>
+        <li><a href="#identify_missing_values">Identify missing values</a></li>
+        <li><a href="#deal_missing_values">Deal with missing values</a></li>
+        <li><a href="#correct_data_format">Correct data format</a></li>
+    </ul>
+</li>
+<li><a href="#data_standardization">Data standardization</a></li>
+<li><a href="#data_normalization">Data Normalization (centering/scaling)</a></li>
+<li><a href="#binning">Binning</a></li>
+<li><a href="#indicator">Indicator variable</a></li>
+\end{verbatim}
+
+Estimated Time Needed: 30 min
+
+    What is the purpose of Data Wrangling?
+
+    Data Wrangling is the process of converting data from the initial format
+to a format that may be better for analysis.
+
+    What is the fuel consumption (L/100k) rate for the diesel car?
+
+    Import data
+
+You can find the "Automobile Data Set" from the following link:
+https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data.
+We will be using this data set throughout this course.
+
+    Import pandas
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pylab} \PY{k}{as} \PY{n+nn}{plt}
+\end{Verbatim}
+
+    Reading the data set from the URL and adding the related headers.
+
+    URL of the dataset
+
+    This dataset was hosted on IBM Cloud object click HERE for free storage
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{filename} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{https://s3\PYZhy{}api.us\PYZhy{}geo.objectstorage.softlayer.net/cf\PYZhy{}courses\PYZhy{}data/CognitiveClass/DA0101EN/auto.csv}\PY{l+s+s2}{\PYZdq{}}
+\end{Verbatim}
+
+    Python list headers containing name of headers
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{headers} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{symboling}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{normalized\PYZhy{}losses}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{make}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{fuel\PYZhy{}type}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{aspiration}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{num\PYZhy{}of\PYZhy{}doors}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{body\PYZhy{}style}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                 \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{drive\PYZhy{}wheels}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{engine\PYZhy{}location}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{wheel\PYZhy{}base}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{length}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{width}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{height}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{curb\PYZhy{}weight}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{engine\PYZhy{}type}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                 \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{num\PYZhy{}of\PYZhy{}cylinders}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{engine\PYZhy{}size}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{fuel\PYZhy{}system}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{bore}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{stroke}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{compression\PYZhy{}ratio}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                 \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{peak\PYZhy{}rpm}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{city\PYZhy{}mpg}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{highway\PYZhy{}mpg}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{price}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+\end{Verbatim}
+
+    Use the Pandas method read\_csv() to load the data from the web address.
+Set the parameter "names" equal to the Python list "headers".
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{n}{names} \PY{o}{=} \PY{n}{headers}\PY{p}{)}
+\end{Verbatim}
+
+    Use the method head() to display the first five rows of the dataframe.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{c+c1}{\PYZsh{} To see what the data set looks like, we\PYZsq{}ll use the head() method.}
+        \PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}5}]:}    symboling normalized-losses         make fuel-type aspiration num-of-doors  \textbackslash{}
+        0          3                 ?  alfa-romero       gas        std          two   
+        1          3                 ?  alfa-romero       gas        std          two   
+        2          1                 ?  alfa-romero       gas        std          two   
+        3          2               164         audi       gas        std         four   
+        4          2               164         audi       gas        std         four   
+        
+            body-style drive-wheels engine-location  wheel-base  {\ldots}  engine-size  \textbackslash{}
+        0  convertible          rwd           front        88.6  {\ldots}          130   
+        1  convertible          rwd           front        88.6  {\ldots}          130   
+        2    hatchback          rwd           front        94.5  {\ldots}          152   
+        3        sedan          fwd           front        99.8  {\ldots}          109   
+        4        sedan          4wd           front        99.4  {\ldots}          136   
+        
+           fuel-system  bore  stroke compression-ratio horsepower  peak-rpm city-mpg  \textbackslash{}
+        0         mpfi  3.47    2.68               9.0        111      5000       21   
+        1         mpfi  3.47    2.68               9.0        111      5000       21   
+        2         mpfi  2.68    3.47               9.0        154      5000       19   
+        3         mpfi  3.19    3.40              10.0        102      5500       24   
+        4         mpfi  3.19    3.40               8.0        115      5500       18   
+        
+          highway-mpg  price  
+        0          27  13495  
+        1          27  16500  
+        2          26  16500  
+        3          30  13950  
+        4          22  17450  
+        
+        [5 rows x 26 columns]
+\end{Verbatim}
+            
+    As we can see, several question marks appeared in the dataframe; those
+are missing values which may hinder our further analysis.
+
+So, how do we identify all those missing values and deal with them?
+
+How to work with missing data?
+
+Steps for working with missing data:
+
+\begin{verbatim}
+<li>dentify missing data</li>
+<li>deal with missing data</li>
+<li>correct data format</li>
+\end{verbatim}
+
+    Identify and handle missing values
+
+Identify missing values
+
+Convert "?" to NaN
+
+In the car dataset, missing data comes with the question mark "?". We
+replace "?" with NaN (Not a Number), which is Python's default missing
+value marker, for reasons of computational speed and convenience. Here
+we use the function:
+
+to replace A by B
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        
+        \PY{c+c1}{\PYZsh{} replace \PYZdq{}?\PYZdq{} to NaN}
+        \PY{n}{df}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{?}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{nan}\PY{p}{,} \PY{n}{inplace} \PY{o}{=} \PY{k+kc}{True}\PY{p}{)}
+        \PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}6}]:}    symboling normalized-losses         make fuel-type aspiration num-of-doors  \textbackslash{}
+        0          3               NaN  alfa-romero       gas        std          two   
+        1          3               NaN  alfa-romero       gas        std          two   
+        2          1               NaN  alfa-romero       gas        std          two   
+        3          2               164         audi       gas        std         four   
+        4          2               164         audi       gas        std         four   
+        
+            body-style drive-wheels engine-location  wheel-base  {\ldots}  engine-size  \textbackslash{}
+        0  convertible          rwd           front        88.6  {\ldots}          130   
+        1  convertible          rwd           front        88.6  {\ldots}          130   
+        2    hatchback          rwd           front        94.5  {\ldots}          152   
+        3        sedan          fwd           front        99.8  {\ldots}          109   
+        4        sedan          4wd           front        99.4  {\ldots}          136   
+        
+           fuel-system  bore  stroke compression-ratio horsepower  peak-rpm city-mpg  \textbackslash{}
+        0         mpfi  3.47    2.68               9.0        111      5000       21   
+        1         mpfi  3.47    2.68               9.0        111      5000       21   
+        2         mpfi  2.68    3.47               9.0        154      5000       19   
+        3         mpfi  3.19    3.40              10.0        102      5500       24   
+        4         mpfi  3.19    3.40               8.0        115      5500       18   
+        
+          highway-mpg  price  
+        0          27  13495  
+        1          27  16500  
+        2          26  16500  
+        3          30  13950  
+        4          22  17450  
+        
+        [5 rows x 26 columns]
+\end{Verbatim}
+            
+    dentify\_missing\_values
+
+Evaluating for Missing Data
+
+The missing values are converted to Python's default. We use Python's
+built-in functions to identify these missing values. There are two
+methods to detect missing data:
+
+\begin{verbatim}
+<li><b>.isnull()</b></li>
+<li><b>.notnull()</b></li>
+\end{verbatim}
+
+The output is a boolean value indicating whether the value that is
+passed into the argument is in fact missing data.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{missing\PYZus{}data} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{isnull}\PY{p}{(}\PY{p}{)}
+        \PY{n}{missing\PYZus{}data}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}7}]:}    symboling  normalized-losses   make  fuel-type  aspiration  num-of-doors  \textbackslash{}
+        0      False               True  False      False       False         False   
+        1      False               True  False      False       False         False   
+        2      False               True  False      False       False         False   
+        3      False              False  False      False       False         False   
+        4      False              False  False      False       False         False   
+        
+           body-style  drive-wheels  engine-location  wheel-base  {\ldots}  engine-size  \textbackslash{}
+        0       False         False            False       False  {\ldots}        False   
+        1       False         False            False       False  {\ldots}        False   
+        2       False         False            False       False  {\ldots}        False   
+        3       False         False            False       False  {\ldots}        False   
+        4       False         False            False       False  {\ldots}        False   
+        
+           fuel-system   bore  stroke  compression-ratio  horsepower  peak-rpm  \textbackslash{}
+        0        False  False   False              False       False     False   
+        1        False  False   False              False       False     False   
+        2        False  False   False              False       False     False   
+        3        False  False   False              False       False     False   
+        4        False  False   False              False       False     False   
+        
+           city-mpg  highway-mpg  price  
+        0     False        False  False  
+        1     False        False  False  
+        2     False        False  False  
+        3     False        False  False  
+        4     False        False  False  
+        
+        [5 rows x 26 columns]
+\end{Verbatim}
+            
+    "True" stands for missing value, while "False" stands for not missing
+value.
+
+    Count missing values in each column
+
+Using a for loop in Python, we can quickly figure out the number of
+missing values in each column. As mentioned above, "True" represents a
+missing value, "False" means the value is present in the dataset. In the
+body of the for loop the method ".value\_counts()" counts the number of
+"True" values.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{k}{for} \PY{n}{column} \PY{o+ow}{in} \PY{n}{missing\PYZus{}data}\PY{o}{.}\PY{n}{columns}\PY{o}{.}\PY{n}{values}\PY{o}{.}\PY{n}{tolist}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{column}\PY{p}{)}
+            \PY{n+nb}{print} \PY{p}{(}\PY{n}{missing\PYZus{}data}\PY{p}{[}\PY{n}{column}\PY{p}{]}\PY{o}{.}\PY{n}{value\PYZus{}counts}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}    
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+symboling
+False    205
+Name: symboling, dtype: int64
+
+normalized-losses
+False    164
+True      41
+Name: normalized-losses, dtype: int64
+
+make
+False    205
+Name: make, dtype: int64
+
+fuel-type
+False    205
+Name: fuel-type, dtype: int64
+
+aspiration
+False    205
+Name: aspiration, dtype: int64
+
+num-of-doors
+False    203
+True       2
+Name: num-of-doors, dtype: int64
+
+body-style
+False    205
+Name: body-style, dtype: int64
+
+drive-wheels
+False    205
+Name: drive-wheels, dtype: int64
+
+engine-location
+False    205
+Name: engine-location, dtype: int64
+
+wheel-base
+False    205
+Name: wheel-base, dtype: int64
+
+length
+False    205
+Name: length, dtype: int64
+
+width
+False    205
+Name: width, dtype: int64
+
+height
+False    205
+Name: height, dtype: int64
+
+curb-weight
+False    205
+Name: curb-weight, dtype: int64
+
+engine-type
+False    205
+Name: engine-type, dtype: int64
+
+num-of-cylinders
+False    205
+Name: num-of-cylinders, dtype: int64
+
+engine-size
+False    205
+Name: engine-size, dtype: int64
+
+fuel-system
+False    205
+Name: fuel-system, dtype: int64
+
+bore
+False    201
+True       4
+Name: bore, dtype: int64
+
+stroke
+False    201
+True       4
+Name: stroke, dtype: int64
+
+compression-ratio
+False    205
+Name: compression-ratio, dtype: int64
+
+horsepower
+False    203
+True       2
+Name: horsepower, dtype: int64
+
+peak-rpm
+False    203
+True       2
+Name: peak-rpm, dtype: int64
+
+city-mpg
+False    205
+Name: city-mpg, dtype: int64
+
+highway-mpg
+False    205
+Name: highway-mpg, dtype: int64
+
+price
+False    201
+True       4
+Name: price, dtype: int64
+
+
+    \end{Verbatim}
+
+    Based on the summary above, each column has 205 rows of data, seven
+columns containing missing data:
+
+\begin{verbatim}
+<li>"normalized-losses": 41 missing data</li>
+<li>"num-of-doors": 2 missing data</li>
+<li>"bore": 4 missing data</li>
+<li>"stroke" : 4 missing data</li>
+<li>"horsepower": 2 missing data</li>
+<li>"peak-rpm": 2 missing data</li>
+<li>"price": 4 missing data</li>
+\end{verbatim}
+
+    Deal with missing data
+
+How to deal with missing data?
+
+\begin{verbatim}
+<li>drop data<br>
+    a. drop the whole row<br>
+    b. drop the whole column
+</li>
+<li>replace data<br>
+    a. replace it by mean<br>
+    b. replace it by frequency<br>
+    c. replace it based on other functions
+</li>
+\end{verbatim}
+
+    Whole columns should be dropped only if most entries in the column are
+empty. In our dataset, none of the columns are empty enough to drop
+entirely. We have some freedom in choosing which method to replace data;
+however, some methods may seem more reasonable than others. We will
+apply each method to many different columns:
+
+Replace by mean:
+
+\begin{verbatim}
+<li>"normalized-losses": 41 missing data, replace them with mean</li>
+<li>"stroke": 4 missing data, replace them with mean</li>
+<li>"bore": 4 missing data, replace them with mean</li>
+<li>"horsepower": 2 missing data, replace them with mean</li>
+<li>"peak-rpm": 2 missing data, replace them with mean</li>
+\end{verbatim}
+
+Replace by frequency:
+
+\begin{verbatim}
+<li>"num-of-doors": 2 missing data, replace them with "four". 
+    <ul>
+        <li>Reason: 84% sedans is four doors. Since four doors is most frequent, it is most likely to occur</li>
+    </ul>
+</li>
+\end{verbatim}
+
+Drop the whole row:
+
+\begin{verbatim}
+<li>"price": 4 missing data, simply delete the whole row
+    <ul>
+        <li>Reason: price is what we want to predict. Any data entry without price data cannot be used for prediction; therefore any row now without price data is not useful to us</li>
+    </ul>
+</li>
+\end{verbatim}
+
+    Calculate the average of the column
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{avg\PYZus{}norm\PYZus{}loss} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{normalized\PYZhy{}losses}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{float}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Average of normalized\PYZhy{}losses:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{avg\PYZus{}norm\PYZus{}loss}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Average of normalized-losses: 122.0
+
+    \end{Verbatim}
+
+    Replace "NaN" by mean value in "normalized-losses" column
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{normalized\PYZhy{}losses}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{nan}\PY{p}{,} \PY{n}{avg\PYZus{}norm\PYZus{}loss}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+    Calculate the mean value for 'bore' column
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{avg\PYZus{}bore}\PY{o}{=}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bore}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{float}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Average of bore:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{avg\PYZus{}bore}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Average of bore: 3.3297512437810943
+
+    \end{Verbatim}
+
+    Replace NaN by mean value
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{bore}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{nan}\PY{p}{,} \PY{n}{avg\PYZus{}bore}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+    Question \#1:
+
+According to the example above, replace NaN in "stroke" column by mean.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Write your code below and press Shift+Enter to execute }
+\end{Verbatim}
+
+    Double-click here for the solution.
+
+    Calculate the mean value for the 'horsepower' column:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{avg\PYZus{}horsepower} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{horsepower}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{float}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Average horsepower:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{avg\PYZus{}horsepower}\PY{p}{)}
+\end{Verbatim}
+
+    Replace "NaN" by mean value:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{horsepower}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{nan}\PY{p}{,} \PY{n}{avg\PYZus{}horsepower}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+    Calculate the mean value for 'peak-rpm' column:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{avg\PYZus{}peakrpm}\PY{o}{=}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{peak\PYZhy{}rpm}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{float}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Average peak rpm:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{avg\PYZus{}peakrpm}\PY{p}{)}
+\end{Verbatim}
+
+    Replace NaN by mean value:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{peak\PYZhy{}rpm}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{nan}\PY{p}{,} \PY{n}{avg\PYZus{}peakrpm}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+    To see which values are present in a particular column, we can use the
+".value\_counts()" method:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num\PYZhy{}of\PYZhy{}doors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{value\PYZus{}counts}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    We can see that four doors are the most common type. We can also use the
+".idxmax()" method to calculate for us the most common type
+automatically:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num\PYZhy{}of\PYZhy{}doors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{value\PYZus{}counts}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{idxmax}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    The replacement procedure is very similar to what we have seen
+previously
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{}replace the missing \PYZsq{}num\PYZhy{}of\PYZhy{}doors\PYZsq{} values by the most frequent }
+        \PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{num\PYZhy{}of\PYZhy{}doors}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{nan}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{four}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+    Finally, let's drop all rows that do not have price data:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} simply drop whole row with NaN in \PYZdq{}price\PYZdq{} column}
+        \PY{n}{df}\PY{o}{.}\PY{n}{dropna}\PY{p}{(}\PY{n}{subset}\PY{o}{=}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{price}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} reset index, because we droped two rows}
+        \PY{n}{df}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{n}{drop}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    Good! Now, we obtain the dataset with no missing values.
+
+    Correct data format
+
+We are almost there!
+
+The last step in data cleaning is checking and making sure that all data
+is in the correct format (int, float, text or other).
+
+In Pandas, we use
+
+.dtype() to check the data type
+
+.astype() to change the data type
+
+    Lets list the data types for each column
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{o}{.}\PY{n}{dtypes}
+\end{Verbatim}
+
+    As we can see above, some columns are not of the correct data type.
+Numerical variables should have type 'float' or 'int', and variables
+with strings such as categories should have type 'object'. For example,
+'bore' and 'stroke' variables are numerical values that describe the
+engines, so we should expect them to be of the type 'float' or 'int';
+however, they are shown as type 'object'. We have to convert data types
+into a proper format for each column using the "astype()" method.
+
+    Convert data types to proper format
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{p}{[}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{bore}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{stroke}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{bore}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{stroke}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{float}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{df}\PY{p}{[}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{normalized\PYZhy{}losses}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{normalized\PYZhy{}losses}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{int}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{df}\PY{p}{[}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{price}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{price}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{float}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{df}\PY{p}{[}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{peak\PYZhy{}rpm}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{peak\PYZhy{}rpm}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{float}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+    Let us list the columns after the conversion
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{o}{.}\PY{n}{dtypes}
+\end{Verbatim}
+
+    Wonderful!
+
+Now, we finally obtain the cleaned dataset with no missing values and
+all data in its proper format.
+
+    Data Standardization
+
+Data is usually collected from different agencies with different
+formats. (Data Standardization is also a term for a particular type of
+data normalization, where we subtract the mean and divide by the
+standard deviation)
+
+What is Standardization?
+
+Standardization is the process of transforming data into a common format
+which allows the researcher to make the meaningful comparison.
+
+Example
+
+Transform mpg to L/100km:
+
+In our dataset, the fuel consumption columns "city-mpg" and
+"highway-mpg" are represented by mpg (miles per gallon) unit. Assume we
+are developing an application in a country that accept the fuel
+consumption with L/100km standard
+
+We will need to apply data transformation to transform mpg into L/100km?
+
+    The formula for unit conversion is
+
+L/100km = 235 / mpg
+
+We can do many mathematical operations directly in Pandas.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Convert mpg to L/100km by mathematical operation (235 divided by mpg)}
+        \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{city\PYZhy{}L/100km}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{235}\PY{o}{/}\PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{city\PYZhy{}mpg}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+        
+        \PY{c+c1}{\PYZsh{} check your transformed data }
+        \PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    Question \#2:
+
+According to the example above, transform mpg to L/100km in the column
+of "highway-mpg", and change the name of column to "highway-L/100km".
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Write your code below and press Shift+Enter to execute }
+\end{Verbatim}
+
+    Double-click here for the solution.
+
+    Data Normalization
+
+Why normalization?
+
+Normalization is the process of transforming values of several variables
+into a similar range. Typical normalizations include scaling the
+variable so the variable average is 0, scaling the variable so the
+variance is 1, or scaling variable so the variable values range from 0
+to 1
+
+Example
+
+To demonstrate normalization, let's say we want to scale the columns
+"length", "width" and "height"
+
+Target:would like to Normalize those variables so their value ranges
+from 0 to 1.
+
+Approach: replace original value by (original value)/(maximum value)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} replace (original value) by (original value)/(maximum value)}
+        \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{length}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{length}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{/}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{length}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
+        \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{width}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{width}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{/}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{width}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    Questiont \#3:
+
+According to the example above, normalize the column "height".
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Write your code below and press Shift+Enter to execute }
+\end{Verbatim}
+
+    Double-click here for the solution.
+
+    Here we can see, we've normalized "length", "width" and "height" in the
+range of {[}0,1{]}.
+
+    Binning
+
+Why binning?
+
+\begin{verbatim}
+Binning is a process of transforming continuous numerical variables into discrete categorical 'bins', for grouped analysis.
+\end{verbatim}
+
+Example:
+
+In our dataset, "horsepower" is a real valued variable ranging from 48
+to 288, it has 57 unique values. What if we only care about the price
+difference between cars with high horsepower, medium horsepower, and
+little horsepower (3 types)? Can we rearrange them into three `bins' to
+simplify analysis?
+
+We will use the Pandas method 'cut' to segment the 'horsepower' column
+into 3 bins
+
+    Example of Binning Data In Pandas
+
+    Convert data to correct format
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{=}\PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{int}\PY{p}{,} \PY{n}{copy}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+    Lets plot the histogram of horspower, to see what the distribution of
+horsepower looks like.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{pyplot}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{pyplot}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} set x/y labels and plot title}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{pyplot}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{pyplot}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{count}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{pyplot}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower bins}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+    We would like 3 bins of equal size bandwidth so we use numpy's
+linspace(start\_value, end\_value, numbers\_generated function.
+
+Since we want to include the minimum value of horsepower we want to set
+start\_value=min(df{[}"horsepower"{]}).
+
+Since we want to include the maximum value of horsepower we want to set
+end\_value=max(df{[}"horsepower"{]}).
+
+Since we are building 3 bins of equal length, there should be 4
+dividers, so numbers\_generated=4.
+
+    We build a bin array, with a minimum value to a maximum value, with
+bandwidth calculated above. The bins will be values used to determine
+when one bin ends and another begins.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{bins} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{n+nb}{min}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{)}
+        \PY{n}{bins}
+\end{Verbatim}
+
+    We set group names:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{group\PYZus{}names} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Low}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Medium}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{High}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+\end{Verbatim}
+
+    We apply the function "cut" the determine what each value of
+"df{[}'horsepower'{]}" belongs to.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{horsepower\PYZhy{}binned}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{cut}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{horsepower}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{bins}\PY{p}{,} \PY{n}{labels}\PY{o}{=}\PY{n}{group\PYZus{}names}\PY{p}{,} \PY{n}{include\PYZus{}lowest}\PY{o}{=}\PY{k+kc}{True} \PY{p}{)}
+        \PY{n}{df}\PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{horsepower}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{horsepower\PYZhy{}binned}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{20}\PY{p}{)}
+\end{Verbatim}
+
+    Lets see the number of vehicles in each bin.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower\PYZhy{}binned}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{value\PYZus{}counts}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    Lets plot the distribution of each bin.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{pyplot}
+        \PY{n}{pyplot}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{group\PYZus{}names}\PY{p}{,} \PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower\PYZhy{}binned}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{value\PYZus{}counts}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} set x/y labels and plot title}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{pyplot}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{pyplot}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{count}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{pyplot}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower bins}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{verbatim}
+Check the dataframe above carefully, you will find the last column provides the bins for "horsepower" with 3 categories ("Low","Medium" and "High"). 
+\end{verbatim}
+
+\begin{verbatim}
+We successfully narrow the intervals from 57 to 3!
+\end{verbatim}
+
+    Bins visualization
+
+Normally, a histogram is used to visualize the distribution of bins we
+created above.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{pyplot}
+        
+        \PY{n}{a} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} draw historgram of attribute \PYZdq{}horsepower\PYZdq{} with bins = 3}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{pyplot}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,} \PY{n}{bins} \PY{o}{=} \PY{l+m+mi}{3}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} set x/y labels and plot title}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{pyplot}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{pyplot}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{count}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{pyplot}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{horsepower bins}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+    The plot above shows the binning result for attribute "horsepower".
+
+    Indicator variable (or dummy variable)
+
+What is an indicator variable?
+
+\begin{verbatim}
+An indicator variable (or dummy variable) is a numerical variable used to label categories. They are called 'dummies' because the numbers themselves don't have inherent meaning. 
+\end{verbatim}
+
+Why we use indicator variables?
+
+\begin{verbatim}
+So we can use categorical variables for regression analysis in the later modules.
+\end{verbatim}
+
+Example
+
+\begin{verbatim}
+We see the column "fuel-type" has two unique values, "gas" or "diesel". Regression doesn't understand words, only numbers. To use this attribute in regression analysis, we convert "fuel-type" into indicator variables.
+\end{verbatim}
+
+\begin{verbatim}
+We will use the panda's method 'get_dummies' to assign numerical values to different categories of fuel type. 
+\end{verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{o}{.}\PY{n}{columns}
+\end{Verbatim}
+
+    get indicator variables and assign it to data frame "dummy\_variable\_1"
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{dummy\PYZus{}variable\PYZus{}1} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{get\PYZus{}dummies}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{fuel\PYZhy{}type}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}
+        \PY{n}{dummy\PYZus{}variable\PYZus{}1}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    change column names for clarity
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{dummy\PYZus{}variable\PYZus{}1}\PY{o}{.}\PY{n}{rename}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fuel\PYZhy{}type\PYZhy{}diesel}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gas}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fuel\PYZhy{}type\PYZhy{}diesel}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{diesel}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+        \PY{n}{dummy\PYZus{}variable\PYZus{}1}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    We now have the value 0 to represent "gas" and 1 to represent "diesel"
+in the column "fuel-type". We will now insert this column back into our
+original dataset.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} merge data frame \PYZdq{}df\PYZdq{} and \PYZdq{}dummy\PYZus{}variable\PYZus{}1\PYZdq{} }
+        \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{df}\PY{p}{,} \PY{n}{dummy\PYZus{}variable\PYZus{}1}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} drop original column \PYZdq{}fuel\PYZhy{}type\PYZdq{} from \PYZdq{}df\PYZdq{}}
+        \PY{n}{df}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{fuel\PYZhy{}type}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{axis} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    The last two columns are now the indicator variable representation of
+the fuel-type variable. It's all 0s and 1s now.
+
+    Question \#4:
+
+As above, create indicator variable to the column of "aspiration": "std"
+to 0, while "turbo" to 1.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Write your code below and press Shift+Enter to execute }
+\end{Verbatim}
+
+    Double-click here for the solution.
+
+    Question \#5:
+
+Merge the new dataframe to the original dataframe then drop the column
+'aspiration'
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Write your code below and press Shift+Enter to execute }
+\end{Verbatim}
+
+    Double-click here for the solution.
+
+    save the new csv
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{df}\PY{o}{.}\PY{n}{to\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{clean\PYZus{}df.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    Thank you for completing this notebook
+
+    \begin{verbatim}
+<p><a href="https://cocl.us/corsera_da0101en_notebook_bottom"><img src="https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DA0101EN/Images/BottomAd.png" width="750" align="center"></a></p>
+\end{verbatim}
+
+    About the Authors:
+
+This notebook was written by Mahdi Noorian PhD, Joseph Santarcangelo,
+Bahare Talayian, Eric Xiao, Steven Dong, Parizad, Hima Vsudevan and
+Fiorella Wenver and Yi Yao.
+
+Joseph Santarcangelo is a Data Scientist at IBM, and holds a PhD in
+Electrical Engineering. His research focused on using Machine Learning,
+Signal Processing, and Computer Vision to determine how videos impact
+human cognition. Joseph has been working for IBM since he completed his
+PhD.
+
+    Copyright © 2018 IBM Developer Skills Network. This notebook and its
+source code are released under the terms of the MIT License.
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
