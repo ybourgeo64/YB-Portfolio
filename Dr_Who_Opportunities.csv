@@ -1,0 +1,21 @@
+OpportunityID,OpportunityName,AccountName,Type,LeadSource,Amount,StageName,CloseDate,NextStep,Probability,Description,CreatedDate
+O001,Gallifrey Defense Initiative,High Council of Gallifrey,New Business,Web Inquiry,250000,Needs Analysis,3/15/2243,Technical Review,60,Complete defense systems upgrade,1/1/2243
+O002,Skaro Modernization Project,Dalek Empire,New Business,Trade Show,180000,Proposal/Price Quote,3/20/2243,Contract Negotiation,75,Fleet-wide weapons upgrade,1/4/2243
+O003,Sanctuary Base 6 Navigation,Sanctuary Base 6,New Business,Partner Referral,120000,Qualification,3/25/2243,Site Survey,40,Base-wide navigation implementation,1/7/2243
+O004,Lunar Colony Transportation,Lunar Colony Alpha,Replacement,Website,90000,Prospecting,3/30/2243,Initial Meeting,20,Time travel tech deployment,1/10/2243
+O005,Papal Mainframe Security,Church of the Papal Mainframe,New Business,Conference,200000,Value Proposition,4/5/2243,Security Assessment,50,Church-wide security upgrade,1/13/2243
+O006,Senate Compression Systems,Raxacoricofallapatorian Senate,Add-On,Word of Mouth,75000,Needs Analysis,4/10/2243,Requirements Gathering,45,Compression tech systems,1/16/2243
+O007,Sisterhood Sonic Project,Sisterhood of Karn,New Business,Email,150000,Proposal/Price Quote,4/15/2243,Contract Negotiation,60,Sonic tech bulk order,1/19/2243
+O008,Midnight Safety Initiative,Midnight Leisure Palace,New Business,Advertisement,80000,Negotiation/Review,4/20/2243,Safety Audit,70,Transportation safety systems,1/22/2243
+O009,Hospital Transport System,New New York Hospital,New Business,Website,100000,Proposal/Price Quote,4/25/2243,Site Survey,50,Medical transport infrastructure,1/25/2243
+O010,Clom Energy Solutions,Clom Industries,Add-On,Trade Show,60000,Prospecting,4/30/2243,Technical Review,25,Energy conversion implementation,1/28/2243
+O011,TARDIS Fleet Expansion,High Council of Gallifrey,Add-On,Web Inquiry,270000,Needs Analysis,5/5/2243,Requirements Gathering,30,Fleet expansion for high council,1/30/2243
+O012,Temporal Shields Contract,Dalek Empire,Add-On,Trade Show,130000,Qualification,5/10/2243,Site Survey,40,Temporal shield enhancement,2/2/2243
+O013,Universal Data Security,New Earth Security,New Business,Referral,150000,Needs Analysis,5/15/2243,Data Analysis,35,Planetary data protection,2/5/2243
+O014,Satellite Defense Network,Lunar Colony Alpha,Replacement,Partner Referral,125000,Value Proposition,5/20/2243,Security Evaluation,45,Satellite-based defense system,2/10/2243
+O015,Weapon Upgrade for Defense,Skaro Arsenal,New Business,Conference,250000,Negotiation/Review,5/25/2243,Final Contract,70,Upgrade weapons to latest model,2/12/2243
+O016,Time Capsule Maintenance,Raxacoricofallapatorian Senate,Maintenance,Website,80000,Needs Analysis,6/5/2243,Technical Review,40,Routine time capsule check,2/14/2243
+O017,Chrono Analysis Initiative,Time Lord Command,New Business,Referral,300000,Proposal/Price Quote,6/10/2243,Contract Negotiation,65,Advanced chrono analysis systems,2/16/2243
+O018,Intergalactic Security Review,Church of the Papal Mainframe,New Business,Website,200000,Qualification,6/15/2243,Site Survey,30,Comprehensive security overhaul,2/18/2243
+O019,Planetary Surveillance System,New New York Hospital,Add-On,Email,110000,Prospecting,6/20/2243,Surveillance Equipment Setup,25,Advanced planetary surveillance,2/20/2243
+O020,Quantum Shield Deployment,Karn Research Facility,New Business,Conference,170000,Negotiation/Review,6/25/2243,Implementation,55,Installation of quantum shields,2/22/2243

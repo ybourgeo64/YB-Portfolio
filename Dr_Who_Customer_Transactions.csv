@@ -1,0 +1,33 @@
+CustomerID,CustomerName,Species,Planet,TransactionDate,ProductName,ProductCategory,Amount,LoyaltyTier,PaymentMethod
+GAL001,Romanadvoratrelundar,Time Lord,Gallifrey,1/1/2243,TARDIS Controls,Navigation Systems,30000,Platinum,Temporal Credits
+GAL002,Rassilon,Time Lord,Gallifrey,1/1/2243,Time Vortex Manipulators,Time Travel,35000,Platinum,Chronological Transfer
+SKR001,Davros,Kaled,Skaro,1/4/2243,Dalek Blasters,Weapons,12000,Gold,Skaro Credits
+SKR002,Nyder,Kaled,Skaro,1/4/2243,Time Vortex Manipulators,Time Travel,25000,Silver,Skaro Credits
+KRP001,Ida Scott,Human,Krop Tor,1/7/2243,TARDIS Controls,Navigation Systems,22000,Bronze,Universal Credits
+KRP002,Zachary Cross Flane,Human,Krop Tor,1/7/2243,Sonic Screwdrivers,Tools,20000,Silver,Universal Credits
+MON001,Chang'e,Lunar Being,The Moon,1/10/2243,Psychic Papers,Communications,9000,Bronze,Lunar Tokens
+MON002,Duke of Manhattan,Human,The Moon,1/10/2243,Time Vortex Manipulators,Time Travel,22000,Gold,Universal Credits
+TRZ001,Tasha Lem,Human,Trenzalore,1/13/2243,Sonic Screwdrivers,Tools,14000,Silver,Church Credits
+TRZ002,Colonel Meme,Human,Trenzalore,1/13/2243,TARDIS Controls,Navigation Systems,16000,Bronze,Church Credits
+RAX001,Blon Fel-Fotch,Slitheen,Raxacoricofallapatorius,1/16/2243,Psychic Papers,Communications,4000,Bronze,Raxacoricofallapatorian Gems
+RAX002,Jocrassa Fel-Fotch,Slitheen,Raxacoricofallapatorius,1/16/2243,Time Vortex Manipulators,Time Travel,12000,Silver,Raxacoricofallapatorian Gems
+KRN001,Ohila,Sister,Karn,1/19/2243,TARDIS Controls,Navigation Systems,14000,Gold,Eternal Flames
+KRN002,Maren,Sister,Karn,1/19/2243,Sonic Screwdrivers,Tools,12000,Silver,Eternal Flames
+MID001,Sky Silvestry,Human,Midnight,1/22/2243,Psychic Papers,Communications,3000,Bronze,Diamond Credits
+MID002,Dee Dee Blasco,Human,Midnight,1/22/2243,Sonic Screwdrivers,Tools,5000,Bronze,Diamond Credits
+NWE001,Novice Hame,Catkind,New Earth,1/25/2243,Time Vortex Manipulators,Time Travel,10000,Gold,New Earth Credits
+NWE002,Face of Boe,Unknown,New Earth,1/25/2243,TARDIS Controls,Navigation Systems,8000,Platinum,New Earth Credits
+CLM001,Absorbaloff,Abzorbalonian,Clom,1/28/2243,Dalek Blasters,Weapons,6000,Bronze,Clom Crystals
+CLM002,Ur-Vokan,Abzorbalonian,Clom,1/28/2243,Time Vortex Manipulators,Time Travel,14000,Silver,Clom Crystals
+GAL003,The Master,Time Lord,Gallifrey,2/1/2243,TARDIS Controls,Navigation Systems,32000,Platinum,Temporal Credits
+GAL004,Omega,Time Lord,Gallifrey,2/1/2243,Time Vortex Manipulators,Time Travel,35000,Platinum,Chronological Transfer
+SKR003,Emperor Dalek,Dalek,Skaro,2/4/2243,Dalek Blasters,Weapons,12000,Gold,Skaro Credits
+SKR004,Supreme Dalek,Dalek,Skaro,2/4/2243,Time Vortex Manipulators,Time Travel,25000,Gold,Skaro Credits
+KRP003,Toby Zed,Human,Krop Tor,2/7/2243,Sonic Screwdrivers,Tools,20000,Bronze,Universal Credits
+MON003,John Reginald,Human,The Moon,2/10/2243,Time Vortex Manipulators,Time Travel,20000,Silver,Lunar Tokens
+TRZ003,Handles,Cyberman,Trenzalore,2/13/2243,TARDIS Controls,Navigation Systems,16000,Gold,Church Credits
+RAX003,Sip Fel-Fotch,Slitheen,Raxacoricofallapatorius,2/16/2243,Psychic Papers,Communications,4000,Bronze,Raxacoricofallapatorian Gems
+KRN003,Morbius,Time Lord,Karn,2/19/2243,Time Vortex Manipulators,Time Travel,16000,Gold,Eternal Flames
+MID003,Hostess,Human,Midnight,2/22/2243,Sonic Screwdrivers,Tools,5000,Bronze,Diamond Credits
+NWE003,Cassandra O'Brien,Human,New Earth,2/25/2243,TARDIS Controls,Navigation Systems,8000,Gold,New Earth Credits
+CLM003,Klom,Abzorbalonian,Clom,2/27/2243,Dalek Blasters,Weapons,6000,Bronze,Clom Crystals

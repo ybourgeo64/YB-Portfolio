@@ -1,0 +1,301 @@
+Date,Product Name,Order Value,Planet
+1/1/2243,TARDIS Controls,30000,Gallifrey
+1/1/2243,Sonic Screwdrivers,25000,Gallifrey
+1/1/2243,Time Vortex Manipulators,35000,Gallifrey
+1/1/2243,Dalek Blasters,15000,Gallifrey
+1/1/2243,Psychic Papers,15000,Gallifrey
+1/2/2243,TARDIS Controls,31000,Gallifrey
+1/2/2243,Sonic Screwdrivers,25000,Gallifrey
+1/2/2243,Time Vortex Manipulators,35000,Gallifrey
+1/2/2243,Dalek Blasters,15000,Gallifrey
+1/2/2243,Psychic Papers,15000,Gallifrey
+1/4/2243,TARDIS Controls,20000,Skaro
+1/4/2243,Sonic Screwdrivers,18000,Skaro
+1/4/2243,Time Vortex Manipulators,25000,Skaro
+1/4/2243,Dalek Blasters,12000,Skaro
+1/4/2243,Psychic Papers,10000,Skaro
+1/5/2243,TARDIS Controls,20000,Skaro
+1/5/2243,Sonic Screwdrivers,18000,Skaro
+1/5/2243,Time Vortex Manipulators,25000,Skaro
+1/5/2243,Dalek Blasters,12000,Skaro
+1/5/2243,Psychic Papers,10200,Skaro
+1/7/2243,TARDIS Controls,22000,Krop Tor
+1/7/2243,Sonic Screwdrivers,20000,Krop Tor
+1/7/2243,Time Vortex Manipulators,28000,Krop Tor
+1/7/2243,Dalek Blasters,13000,Krop Tor
+1/7/2243,Psychic Papers,12000,Krop Tor
+1/8/2243,TARDIS Controls,22000,Krop Tor
+1/8/2243,Sonic Screwdrivers,20000,Krop Tor
+1/8/2243,Time Vortex Manipulators,28000,Krop Tor
+1/8/2243,Dalek Blasters,13000,Krop Tor
+1/8/2243,Psychic Papers,12000,Krop Tor
+1/10/2243,TARDIS Controls,18000,The Moon
+1/10/2243,Sonic Screwdrivers,15000,The Moon
+1/10/2243,Time Vortex Manipulators,22000,The Moon
+1/10/2243,Dalek Blasters,10000,The Moon
+1/10/2243,Psychic Papers,9000,The Moon
+1/11/2243,TARDIS Controls,18000,The Moon
+1/11/2243,Sonic Screwdrivers,15000,The Moon
+1/11/2243,Time Vortex Manipulators,21000,The Moon
+1/11/2243,Dalek Blasters,10000,The Moon
+1/11/2243,Psychic Papers,9000,The Moon
+1/13/2243,TARDIS Controls,16000,Trenzalore
+1/13/2243,Sonic Screwdrivers,14000,Trenzalore
+1/13/2243,Time Vortex Manipulators,20000,Trenzalore
+1/13/2243,Dalek Blasters,9000,Trenzalore
+1/13/2243,Psychic Papers,8000,Trenzalore
+1/14/2243,TARDIS Controls,16000,Trenzalore
+1/14/2243,Sonic Screwdrivers,13500,Trenzalore
+1/14/2243,Time Vortex Manipulators,20000,Trenzalore
+1/14/2243,Dalek Blasters,9000,Trenzalore
+1/14/2243,Psychic Papers,8000,Trenzalore
+1/16/2243,TARDIS Controls,10000,Raxacoricofallapatorius
+1/16/2243,Sonic Screwdrivers,9000,Raxacoricofallapatorius
+1/16/2243,Time Vortex Manipulators,12000,Raxacoricofallapatorius
+1/16/2243,Dalek Blasters,5000,Raxacoricofallapatorius
+1/16/2243,Psychic Papers,4000,Raxacoricofallapatorius
+1/17/2243,TARDIS Controls,10000,Raxacoricofallapatorius
+1/17/2243,Sonic Screwdrivers,9000,Raxacoricofallapatorius
+1/17/2243,Time Vortex Manipulators,12000,Raxacoricofallapatorius
+1/17/2243,Dalek Blasters,5000,Raxacoricofallapatorius
+1/17/2243,Psychic Papers,4000,Raxacoricofallapatorius
+1/19/2243,TARDIS Controls,14000,Karn
+1/19/2243,Sonic Screwdrivers,12000,Karn
+1/19/2243,Time Vortex Manipulators,16000,Karn
+1/19/2243,Dalek Blasters,7000,Karn
+1/19/2243,Psychic Papers,6000,Karn
+1/20/2243,TARDIS Controls,14000,Karn
+1/20/2243,Sonic Screwdrivers,12000,Karn
+1/20/2243,Time Vortex Manipulators,16000,Karn
+1/20/2243,Dalek Blasters,7000,Karn
+1/20/2243,Psychic Papers,6000,Karn
+1/22/2243,TARDIS Controls,6000,Midnight
+1/22/2243,Sonic Screwdrivers,5000,Midnight
+1/22/2243,Time Vortex Manipulators,8000,Midnight
+1/22/2243,Dalek Blasters,3000,Midnight
+1/22/2243,Psychic Papers,3000,Midnight
+1/23/2243,TARDIS Controls,6000,Midnight
+1/23/2243,Sonic Screwdrivers,5000,Midnight
+1/23/2243,Time Vortex Manipulators,8000,Midnight
+1/23/2243,Dalek Blasters,3000,Midnight
+1/23/2243,Psychic Papers,3000,Midnight
+1/25/2243,TARDIS Controls,8000,New Earth
+1/25/2243,Sonic Screwdrivers,7000,New Earth
+1/25/2243,Time Vortex Manipulators,10000,New Earth
+1/25/2243,Dalek Blasters,4000,New Earth
+1/25/2243,Psychic Papers,4000,New Earth
+1/26/2243,TARDIS Controls,8000,New Earth
+1/26/2243,Sonic Screwdrivers,7000,New Earth
+1/26/2243,Time Vortex Manipulators,10000,New Earth
+1/26/2243,Dalek Blasters,4000,New Earth
+1/26/2243,Psychic Papers,4000,New Earth
+1/28/2243,TARDIS Controls,12000,Clom
+1/28/2243,Sonic Screwdrivers,10000,Clom
+1/28/2243,Time Vortex Manipulators,14000,Clom
+1/28/2243,Dalek Blasters,6000,Clom
+1/28/2243,Psychic Papers,5000,Clom
+1/29/2243,TARDIS Controls,12000,Clom
+1/29/2243,Sonic Screwdrivers,10000,Clom
+1/29/2243,Time Vortex Manipulators,14000,Clom
+1/29/2243,Dalek Blasters,6000,Clom
+1/29/2243,Psychic Papers,5000,Clom
+2/1/2243,TARDIS Controls,32000,Gallifrey
+2/1/2243,Sonic Screwdrivers,25000,Gallifrey
+2/1/2243,Time Vortex Manipulators,35000,Gallifrey
+2/1/2243,Dalek Blasters,15000,Gallifrey
+2/1/2243,Psychic Papers,15000,Gallifrey
+2/2/2243,TARDIS Controls,33000,Gallifrey
+2/2/2243,Sonic Screwdrivers,25000,Gallifrey
+2/2/2243,Time Vortex Manipulators,35000,Gallifrey
+2/2/2243,Dalek Blasters,15000,Gallifrey
+2/2/2243,Psychic Papers,15000,Gallifrey
+2/4/2243,TARDIS Controls,20000,Skaro
+2/4/2243,Sonic Screwdrivers,18000,Skaro
+2/4/2243,Time Vortex Manipulators,25000,Skaro
+2/4/2243,Dalek Blasters,12000,Skaro
+2/4/2243,Psychic Papers,10400,Skaro
+2/5/2243,TARDIS Controls,20000,Skaro
+2/5/2243,Sonic Screwdrivers,18000,Skaro
+2/5/2243,Time Vortex Manipulators,25000,Skaro
+2/5/2243,Dalek Blasters,12000,Skaro
+2/5/2243,Psychic Papers,10600,Skaro
+2/7/2243,TARDIS Controls,22000,Krop Tor
+2/7/2243,Sonic Screwdrivers,20000,Krop Tor
+2/7/2243,Time Vortex Manipulators,28000,Krop Tor
+2/7/2243,Dalek Blasters,13000,Krop Tor
+2/7/2243,Psychic Papers,12000,Krop Tor
+2/8/2243,TARDIS Controls,22000,Krop Tor
+2/8/2243,Sonic Screwdrivers,20000,Krop Tor
+2/8/2243,Time Vortex Manipulators,28000,Krop Tor
+2/8/2243,Dalek Blasters,13000,Krop Tor
+2/8/2243,Psychic Papers,12000,Krop Tor
+2/10/2243,TARDIS Controls,18000,The Moon
+2/10/2243,Sonic Screwdrivers,15000,The Moon
+2/10/2243,Time Vortex Manipulators,20000,The Moon
+2/10/2243,Dalek Blasters,10000,The Moon
+2/10/2243,Psychic Papers,9000,The Moon
+2/11/2243,TARDIS Controls,18000,The Moon
+2/11/2243,Sonic Screwdrivers,15000,The Moon
+2/11/2243,Time Vortex Manipulators,19000,The Moon
+2/11/2243,Dalek Blasters,10000,The Moon
+2/11/2243,Psychic Papers,9000,The Moon
+2/13/2243,TARDIS Controls,16000,Trenzalore
+2/13/2243,Sonic Screwdrivers,13000,Trenzalore
+2/13/2243,Time Vortex Manipulators,20000,Trenzalore
+2/13/2243,Dalek Blasters,9000,Trenzalore
+2/13/2243,Psychic Papers,8000,Trenzalore
+2/14/2243,TARDIS Controls,16000,Trenzalore
+2/14/2243,Sonic Screwdrivers,12500,Trenzalore
+2/14/2243,Time Vortex Manipulators,20000,Trenzalore
+2/14/2243,Dalek Blasters,9000,Trenzalore
+2/14/2243,Psychic Papers,8000,Trenzalore
+2/16/2243,TARDIS Controls,10000,Raxacoricofallapatorius
+2/16/2243,Sonic Screwdrivers,9000,Raxacoricofallapatorius
+2/16/2243,Time Vortex Manipulators,12000,Raxacoricofallapatorius
+2/16/2243,Dalek Blasters,5000,Raxacoricofallapatorius
+2/16/2243,Psychic Papers,4000,Raxacoricofallapatorius
+2/17/2243,TARDIS Controls,10000,Raxacoricofallapatorius
+2/17/2243,Sonic Screwdrivers,9000,Raxacoricofallapatorius
+2/17/2243,Time Vortex Manipulators,12000,Raxacoricofallapatorius
+2/17/2243,Dalek Blasters,5000,Raxacoricofallapatorius
+2/17/2243,Psychic Papers,4000,Raxacoricofallapatorius
+2/19/2243,TARDIS Controls,14000,Karn
+2/19/2243,Sonic Screwdrivers,12000,Karn
+2/19/2243,Time Vortex Manipulators,16000,Karn
+2/19/2243,Dalek Blasters,7000,Karn
+2/19/2243,Psychic Papers,6000,Karn
+2/20/2243,TARDIS Controls,14000,Karn
+2/20/2243,Sonic Screwdrivers,12000,Karn
+2/20/2243,Time Vortex Manipulators,16000,Karn
+2/20/2243,Dalek Blasters,7000,Karn
+2/20/2243,Psychic Papers,6000,Karn
+2/22/2243,TARDIS Controls,6000,Midnight
+2/22/2243,Sonic Screwdrivers,5000,Midnight
+2/22/2243,Time Vortex Manipulators,8000,Midnight
+2/22/2243,Dalek Blasters,3000,Midnight
+2/22/2243,Psychic Papers,3000,Midnight
+2/23/2243,TARDIS Controls,6000,Midnight
+2/23/2243,Sonic Screwdrivers,5000,Midnight
+2/23/2243,Time Vortex Manipulators,8000,Midnight
+2/23/2243,Dalek Blasters,3000,Midnight
+2/23/2243,Psychic Papers,3000,Midnight
+2/25/2243,TARDIS Controls,8000,New Earth
+2/25/2243,Sonic Screwdrivers,7000,New Earth
+2/25/2243,Time Vortex Manipulators,10000,New Earth
+2/25/2243,Dalek Blasters,4000,New Earth
+2/25/2243,Psychic Papers,4000,New Earth
+2/26/2243,TARDIS Controls,8000,New Earth
+2/26/2243,Sonic Screwdrivers,7000,New Earth
+2/26/2243,Time Vortex Manipulators,10000,New Earth
+2/26/2243,Dalek Blasters,4000,New Earth
+2/26/2243,Psychic Papers,4000,New Earth
+2/27/2243,TARDIS Controls,12000,Clom
+2/27/2243,Sonic Screwdrivers,10000,Clom
+2/27/2243,Time Vortex Manipulators,14000,Clom
+2/27/2243,Dalek Blasters,6000,Clom
+2/27/2243,Psychic Papers,5000,Clom
+2/28/2243,TARDIS Controls,12000,Clom
+2/28/2243,Sonic Screwdrivers,10000,Clom
+2/28/2243,Time Vortex Manipulators,14000,Clom
+2/28/2243,Dalek Blasters,6000,Clom
+2/28/2243,Psychic Papers,5000,Clom
+3/1/2243,TARDIS Controls,34000,Gallifrey
+3/1/2243,Sonic Screwdrivers,25000,Gallifrey
+3/1/2243,Time Vortex Manipulators,35000,Gallifrey
+3/1/2243,Dalek Blasters,15000,Gallifrey
+3/1/2243,Psychic Papers,15000,Gallifrey
+3/2/2243,TARDIS Controls,35000,Gallifrey
+3/2/2243,Sonic Screwdrivers,25000,Gallifrey
+3/2/2243,Time Vortex Manipulators,35000,Gallifrey
+3/2/2243,Dalek Blasters,15000,Gallifrey
+3/2/2243,Psychic Papers,15000,Gallifrey
+3/4/2243,TARDIS Controls,20000,Skaro
+3/4/2243,Sonic Screwdrivers,18000,Skaro
+3/4/2243,Time Vortex Manipulators,25000,Skaro
+3/4/2243,Dalek Blasters,12000,Skaro
+3/4/2243,Psychic Papers,10800,Skaro
+3/5/2243,TARDIS Controls,20000,Skaro
+3/5/2243,Sonic Screwdrivers,18000,Skaro
+3/5/2243,Time Vortex Manipulators,25000,Skaro
+3/5/2243,Dalek Blasters,12000,Skaro
+3/5/2243,Psychic Papers,11000,Skaro
+3/7/2243,TARDIS Controls,22000,Krop Tor
+3/7/2243,Sonic Screwdrivers,20000,Krop Tor
+3/7/2243,Time Vortex Manipulators,28000,Krop Tor
+3/7/2243,Dalek Blasters,13000,Krop Tor
+3/7/2243,Psychic Papers,12000,Krop Tor
+3/8/2243,TARDIS Controls,22000,Krop Tor
+3/8/2243,Sonic Screwdrivers,20000,Krop Tor
+3/8/2243,Time Vortex Manipulators,28000,Krop Tor
+3/8/2243,Dalek Blasters,13000,Krop Tor
+3/8/2243,Psychic Papers,12000,Krop Tor
+3/10/2243,TARDIS Controls,18000,The Moon
+3/10/2243,Sonic Screwdrivers,15000,The Moon
+3/10/2243,Time Vortex Manipulators,18000,The Moon
+3/10/2243,Dalek Blasters,10000,The Moon
+3/10/2243,Psychic Papers,9000,The Moon
+3/11/2243,TARDIS Controls,18000,The Moon
+3/11/2243,Sonic Screwdrivers,15000,The Moon
+3/11/2243,Time Vortex Manipulators,17000,The Moon
+3/11/2243,Dalek Blasters,10000,The Moon
+3/11/2243,Psychic Papers,9000,The Moon
+3/13/2243,TARDIS Controls,16000,Trenzalore
+3/13/2243,Sonic Screwdrivers,12000,Trenzalore
+3/13/2243,Time Vortex Manipulators,20000,Trenzalore
+3/13/2243,Dalek Blasters,9000,Trenzalore
+3/13/2243,Psychic Papers,8000,Trenzalore
+3/14/2243,TARDIS Controls,16000,Trenzalore
+3/14/2243,Sonic Screwdrivers,11500,Trenzalore
+3/14/2243,Time Vortex Manipulators,20000,Trenzalore
+3/14/2243,Dalek Blasters,9000,Trenzalore
+3/14/2243,Psychic Papers,8000,Trenzalore
+3/16/2243,TARDIS Controls,10000,Raxacoricofallapatorius
+3/16/2243,Sonic Screwdrivers,9000,Raxacoricofallapatorius
+3/16/2243,Time Vortex Manipulators,12000,Raxacoricofallapatorius
+3/16/2243,Dalek Blasters,5000,Raxacoricofallapatorius
+3/16/2243,Psychic Papers,4000,Raxacoricofallapatorius
+3/17/2243,TARDIS Controls,10000,Raxacoricofallapatorius
+3/17/2243,Sonic Screwdrivers,9000,Raxacoricofallapatorius
+3/17/2243,Time Vortex Manipulators,12000,Raxacoricofallapatorius
+3/17/2243,Dalek Blasters,5000,Raxacoricofallapatorius
+3/17/2243,Psychic Papers,4000,Raxacoricofallapatorius
+3/19/2243,TARDIS Controls,14000,Karn
+3/19/2243,Sonic Screwdrivers,12000,Karn
+3/19/2243,Time Vortex Manipulators,16000,Karn
+3/19/2243,Dalek Blasters,7000,Karn
+3/19/2243,Psychic Papers,6000,Karn
+3/20/2243,TARDIS Controls,14000,Karn
+3/20/2243,Sonic Screwdrivers,12000,Karn
+3/20/2243,Time Vortex Manipulators,16000,Karn
+3/20/2243,Dalek Blasters,7000,Karn
+3/20/2243,Psychic Papers,6000,Karn
+3/22/2243,TARDIS Controls,6000,Midnight
+3/22/2243,Sonic Screwdrivers,5000,Midnight
+3/22/2243,Time Vortex Manipulators,8000,Midnight
+3/22/2243,Dalek Blasters,3000,Midnight
+3/22/2243,Psychic Papers,3000,Midnight
+3/23/2243,TARDIS Controls,6000,Midnight
+3/23/2243,Sonic Screwdrivers,5000,Midnight
+3/23/2243,Time Vortex Manipulators,8000,Midnight
+3/23/2243,Dalek Blasters,3000,Midnight
+3/23/2243,Psychic Papers,3000,Midnight
+3/25/2243,TARDIS Controls,8000,New Earth
+3/25/2243,Sonic Screwdrivers,7000,New Earth
+3/25/2243,Time Vortex Manipulators,10000,New Earth
+3/25/2243,Dalek Blasters,4000,New Earth
+3/25/2243,Psychic Papers,4000,New Earth
+3/26/2243,TARDIS Controls,8000,New Earth
+3/26/2243,Sonic Screwdrivers,7000,New Earth
+3/26/2243,Time Vortex Manipulators,10000,New Earth
+3/26/2243,Dalek Blasters,4000,New Earth
+3/26/2243,Psychic Papers,4000,New Earth
+3/28/2243,TARDIS Controls,12000,Clom
+3/28/2243,Sonic Screwdrivers,10000,Clom
+3/28/2243,Time Vortex Manipulators,14000,Clom
+3/28/2243,Dalek Blasters,6000,Clom
+3/28/2243,Psychic Papers,5000,Clom
+3/29/2243,TARDIS Controls,12000,Clom
+3/29/2243,Sonic Screwdrivers,10000,Clom
+3/29/2243,Time Vortex Manipulators,14000,Clom
+3/29/2243,Dalek Blasters,6000,Clom
+3/29/2243,Psychic Papers,5000,Clom

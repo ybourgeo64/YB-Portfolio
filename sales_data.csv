@@ -1,0 +1,101 @@
+Order ID,Product Category,Product Name,Date,Sales Amount,Quantity,Region
+14be2ee3-25e7-490c-9aa7-818a065f1163,Furniture,Sofa,2024-05-08,930.22,10,South
+fe7205af-64c0-4f4e-80a2-5b5a41e5c932,Groceries,Butter,2024-06-11,1372.37,8,South
+d77c97fe-dc52-405d-875a-86b4d42995fe,Clothing,Jacket,2024-03-01,654.4,10,East
+ec6d0ae6-41db-4929-90a5-282a3e218a19,Toys,Doll,2024-05-16,953.0,1,West
+f1f153cd-b41f-4be6-9e90-63c777708b9d,Groceries,Cheese,2023-09-08,873.66,8,West
+48066e47-a4ae-4b2d-984d-55ad7e051d89,Groceries,Milk,2024-02-02,104.6,9,North
+edf34431-5817-4698-bccc-7cc9f0603d30,Groceries,Eggs,2024-05-15,492.75,4,South
+c2a72fac-1883-4cd4-81ef-d777361053e9,Electronics,Smartwatch,2024-07-13,444.15,8,East
+578cbd71-513a-4cc0-8590-f94c05b5bfda,Clothing,Jeans,2023-08-09,1069.66,3,South
+9f886029-bcec-423f-aadb-3b0b90c20469,Groceries,Butter,2023-08-19,326.76,10,North
+d2fed43e-35e7-4bd6-b3be-8711fea1446e,Furniture,Office Chair,2024-04-25,269.5,6,East
+26fe91de-d876-4c7b-83f8-2c1f42882ee8,Clothing,Shoes,2024-05-12,187.34,7,West
+233b368e-0384-4c9d-bf3c-143e8eb96396,Furniture,Office Chair,2024-05-08,213.34,7,West
+cf0c35b7-f369-43e5-bc98-544eedf23e5e,Clothing,Jeans,2023-11-28,302.02,8,East
+d2c68c3a-4d31-4554-a077-f55c446f5f5c,Clothing,Shoes,2023-08-06,1150.25,4,North
+696b87e4-a61b-42b9-b2e8-9f8ac46c3419,Clothing,Shoes,2024-07-02,723.82,10,South
+c5eab0e9-e49d-4814-a2ca-bf6acc77b1f3,Groceries,Butter,2023-08-06,977.54,2,East
+6f952f7a-5b10-46af-b5b8-c0159fb3b333,Furniture,Office Chair,2023-08-19,679.11,5,East
+10bb35e1-cb43-4b34-89e5-d4482ae8e675,Furniture,Office Chair,2024-06-17,426.41,9,West
+24390055-685d-47db-8c3f-0a7cb4556d95,Groceries,Butter,2024-05-30,842.42,8,South
+d7d15931-4711-4d5d-ba97-7823c9b1791d,Clothing,Jacket,2023-08-24,592.76,5,West
+566fa659-c3eb-4a7f-8e4a-2325da781741,Groceries,Cheese,2024-04-26,1170.96,2,North
+e954b6cd-a72a-4cf0-9b0a-7842b539dff5,Furniture,Bookshelf,2024-07-24,198.14,4,West
+836e7495-8606-4bb8-b8bf-b56bf4f24d26,Electronics,Laptop,2024-04-23,1159.5,3,East
+df295172-9bf9-48cb-9ca9-e4c86974bf55,Clothing,Sweater,2024-07-17,498.31,4,West
+55a3168c-07b6-43f8-9b37-f44c50a2c562,Groceries,Bread,2024-05-04,972.7,7,West
+ff54747f-7484-40db-b15a-452f0ddc75e2,Furniture,Desk,2024-06-10,407.01,2,South
+4a5178eb-e894-468a-a943-d71ac734aed9,Electronics,Smartwatch,2024-04-26,786.25,10,North
+0a9544a9-33d6-43d9-b6a0-ce03abdff222,Groceries,Cheese,2024-02-13,291.68,5,North
+3578ba2e-df57-4edf-8d9c-79cf470d99eb,Electronics,Smartwatch,2023-10-08,379.26,8,West
+1edfe7a8-3828-4471-a24b-2164dc9113bc,Clothing,Sweater,2023-10-05,380.5,8,North
+aa9df616-502c-4f8c-aecc-7157bb4b78b7,Groceries,Butter,2024-04-04,1174.8,3,North
+454d5e04-89fe-4965-a5a2-19671502e78f,Clothing,Jacket,2024-02-29,1181.35,7,West
+5168a01c-1156-46cc-8005-ce5541da0bf9,Toys,Toy Car,2024-07-01,191.87,7,East
+8e5bbba5-675d-45cc-9a17-71df94b63dd0,Clothing,Jeans,2024-01-16,744.27,2,East
+1dbc93a2-2ac5-4a41-bb70-d7688cb2ad51,Electronics,Smartphone,2023-12-15,1370.96,10,East
+597454d0-29fb-458b-846d-40b8098020ee,Clothing,Sweater,2024-04-10,145.81,6,West
+703d7d23-7d13-4708-a94a-3ed01d610680,Furniture,Table,2023-09-13,1260.18,8,South
+08ce6fdf-352a-43d9-b058-16cb55afc42b,Furniture,Table,2024-07-02,642.62,10,East
+40a445f8-cc72-4b40-b152-a55c89937d9f,Clothing,Shoes,2024-01-07,745.01,8,North
+9c0a2565-5aab-43d0-8b8a-9a208843068d,Clothing,Jeans,2024-02-19,385.63,5,West
+9c1a42ac-7945-45c0-82c5-0bbd07231c36,Clothing,Sweater,2024-06-02,185.32,1,East
+c0cfb5cc-21d3-48da-a62f-32580cd6c4a7,Groceries,Butter,2023-11-19,1478.85,6,East
+704300ba-3dda-4904-823b-b1d0be4b3e80,Groceries,Butter,2024-05-15,628.25,1,West
+43de497a-bb1a-4619-a2f0-391b2189d803,Electronics,Smartwatch,2023-09-05,297.97,6,North
+9717c68a-6cc7-4d4e-9a50-08dbdd4bcab1,Toys,Doll,2024-06-07,130.34,9,North
+599d565e-f2cf-4a56-97fa-413374411275,Toys,Board Game,2024-07-12,1127.71,2,West
+562ebb9d-cfad-4421-b799-b2f43f67606c,Clothing,T-shirt,2023-08-02,711.87,9,East
+c2e6f149-1a35-49d3-9c5e-86c4b1490d2e,Groceries,Milk,2023-11-14,432.74,10,South
+0c51fad2-94e7-42b9-961c-0e36a0853ad1,Furniture,Desk,2024-04-05,965.59,7,West
+6f2c2826-1325-4404-a639-8dfc2a1a957c,Electronics,Smartwatch,2024-04-15,450.75,3,East
+8c49446b-71f6-4d14-b3b2-16de8d614fdc,Toys,Board Game,2024-07-19,147.93,7,North
+cf55a379-955b-4677-b628-02a748f5dce2,Toys,Doll,2023-08-04,1168.47,7,West
+6953caaf-aff4-4b2a-bec6-16539118d866,Furniture,Bookshelf,2024-07-13,465.89,6,North
+955c160d-00c5-43dc-a1bb-6d19e8b7c3fe,Groceries,Eggs,2024-06-02,793.54,7,South
+1a2a91bf-a631-46a0-8f13-078712bcd6cc,Toys,Doll,2024-07-03,983.42,9,West
+0d88965c-1d7b-44d0-b6ed-601a76fa0aaf,Furniture,Table,2024-02-23,590.57,8,East
+40f559b9-7f87-43f2-961d-682daec09c5f,Clothing,Jacket,2023-08-20,1047.13,1,South
+9b889088-5cc6-4e97-82e4-d22a4b2fd71b,Toys,Action Figure,2023-08-17,186.5,6,South
+6532b096-35c0-4002-9c20-42b3e29d95f8,Electronics,Tablet,2024-02-28,115.74,8,West
+3a2563eb-1b3d-4955-b63c-637158a2cb61,Groceries,Bread,2023-10-20,1486.66,8,West
+40b938d1-5c87-4f3e-bc80-13ac95a2134f,Furniture,Sofa,2024-07-19,323.0,4,West
+a6479be6-5913-4682-903e-6ac46b819729,Clothing,Shoes,2024-06-03,269.47,1,South
+a35ee992-2ef5-4a9f-b1c5-4015d465151f,Toys,Toy Car,2023-12-11,629.32,6,North
+e4128f61-ae93-4fb6-a28f-144cd9b9a386,Furniture,Desk,2023-09-18,1412.18,4,East
+77017241-9bf9-4912-92c1-b15eed9f89fd,Electronics,Laptop,2024-02-01,884.22,7,North
+c9da6b5d-495a-4c7b-b2c4-96d84af45a4d,Clothing,Jacket,2024-03-27,688.23,2,North
+f9f76b8b-c230-45dd-86bd-94c6134dd2f6,Groceries,Butter,2023-08-01,216.58,10,South
+8aa7ba96-1fb2-41ca-b833-e2903cea64ee,Clothing,Jeans,2024-04-19,925.14,4,South
+f66721d7-8bc1-4a34-812a-4d2c4defa004,Toys,Board Game,2024-01-15,1305.29,8,East
+8483dab5-137d-4afe-9821-8b893652bfd1,Electronics,Laptop,2023-09-12,421.17,4,East
+b2f66010-99af-4f25-9d18-b27bec712303,Electronics,Smartwatch,2024-07-08,169.08,5,North
+8a48662c-53a4-42cf-abb0-111ec9b396e0,Furniture,Office Chair,2023-12-19,1242.25,9,East
+3deca0fe-5f2c-4d91-9a33-c660fc80a18a,Groceries,Cheese,2024-05-22,595.97,3,North
+8fb69cc3-dc49-4c67-92c3-174e61317023,Groceries,Cheese,2024-02-04,504.07,8,South
+8e055884-5945-4e6d-adf7-655f89c7e37f,Groceries,Cheese,2023-11-12,278.44,3,South
+b1cfb8f0-4fa9-4842-b62d-64a381a79847,Clothing,Shoes,2023-12-21,931.09,8,East
+7df520fc-1db1-4e0c-a078-aa0149e7a5a9,Toys,Toy Car,2024-03-30,836.4,3,East
+6c666bc7-d134-4394-a82b-ac4b77db5a94,Toys,Doll,2024-03-12,447.34,9,West
+290a683f-3157-43dc-a42f-2a7028b4308c,Electronics,Smartwatch,2023-10-18,766.44,2,South
+46e3a40e-f37d-4422-9a19-77970159cab8,Groceries,Milk,2023-10-01,1476.2,9,North
+c272aeae-e4ab-49e9-ac2c-f26c0161da5d,Groceries,Milk,2023-08-06,849.65,3,West
+37a7d20d-586f-480c-8d34-c566c0b0d075,Clothing,Sweater,2024-05-28,1015.03,9,South
+380fb6dd-8b08-4c16-8d7d-59a99f1833a1,Groceries,Eggs,2024-05-28,384.15,8,North
+73b89e1d-591b-48a2-aa0b-6ac48683ef8f,Clothing,Shoes,2024-06-12,1663.65,5,West
+d9c0a02a-8d72-4eb2-b33e-34594221c599,Clothing,Jeans,2024-06-27,819.24,5,South
+f748aee6-8376-4681-811b-13577f771a95,Electronics,Laptop,2024-06-23,590.5,5,West
+285ca69f-d3cc-46be-9925-4b733632bc96,Toys,Doll,2023-07-28,1562.87,5,South
+711b95a7-bb38-48ec-96bb-a96f9b1acbd4,Groceries,Butter,2023-08-27,472.96,9,East
+418773ca-c772-4b05-8990-3ce3e2617b92,Toys,Board Game,2024-05-13,425.8,1,North
+ec39ab04-5079-45af-8628-1a2a9ad7a015,Electronics,Laptop,2024-01-10,286.12,5,West
+a0772b34-2c53-413b-a83f-fffeb6974fba,Clothing,Jacket,2024-03-17,564.89,8,East
+7d2fe114-5cbc-4e7b-9ece-8f086bf7d7ed,Clothing,T-shirt,2024-04-05,466.21,10,East
+97903f9d-5666-4e36-b73e-394a2d62105b,Furniture,Table,2023-12-20,379.45,4,East
+05a61b7e-3dfa-4303-96ff-3df96c88f79e,Electronics,Smartphone,2023-10-06,1070.08,3,North
+cc565358-778e-4a2d-b1e5-023c2ef29aaa,Furniture,Bookshelf,2024-03-05,685.59,1,North
+42ffcebd-1caa-4213-8bd5-c364bfad7c96,Groceries,Eggs,2024-05-25,1198.16,9,South
+4ae6f52a-162e-48fb-8d5f-4165ea0de129,Groceries,Bread,2024-05-26,256.58,6,South
+41d528d3-a4f1-4cd3-bf5c-e03d4cd25b78,Furniture,Sofa,2024-05-24,577.69,7,South
+cf49b74a-5fcd-46fb-b608-45786ca94a66,Groceries,Cheese,2023-10-23,503.55,1,East
